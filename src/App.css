@@ -155,6 +155,79 @@ span { color: inherit; }
 
 .call-to-action { text-align: center; }
 
+.booking-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.booking {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.booking h2 {
+  margin-bottom: 0.35rem;
+}
+
+.booking p {
+  margin-bottom: 1.25rem;
+}
+
+.booking-form {
+  display: grid;
+  gap: 0.9rem;
+  width: 100%;
+  max-width: 420px;
+  padding: 1.25rem;
+  margin-top: 0.5rem;
+  background: linear-gradient(180deg, rgba(7,18,11,0.96), rgba(11,26,20,0.98));
+  border: 1px solid rgba(43, 182, 115, 0.18);
+  border-radius: calc(var(--radius) + 2px);
+}
+
+.booking-form label {
+  font-weight: 600;
+  color: var(--accent-dark);
+  letter-spacing: 0.02em;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  background: #07120b;
+  color: var(--accent-dark);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 0.8rem 0.85rem;
+  box-sizing: border-box;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.booking-form .cta-btn {
+  border: none;
+  cursor: pointer;
+  justify-self: start;
+  width: 100%;
+  margin-top: 0.35rem;
+  box-shadow: 0 10px 20px rgba(244, 196, 48, 0.15);
+}
+
+.booking-form .cta-btn:hover,
+.booking-form .cta-btn:focus {
+  background: #ffd452;
+}
+
+@media (min-width: 640px) {
+  .booking-form {
+    padding: 1.5rem;
+  }
+}
+
 /* Responsive adjustments */
 @media (min-width: 768px) {
   .nav-list { justify-content: flex-start; }
