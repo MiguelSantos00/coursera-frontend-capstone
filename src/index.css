@@ -5,6 +5,55 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--accent-dark);
+}
+
+/* dark green background for the app shell */
+.site-body {
+  background: var(--bg);
+}
+
+:root {
+  --bg: #07120b; /* very dark green */
+  --surface: #0b1a14; /* darker surface */
+  --brand: #f4c430; /* lemon-y accent (yellow) */
+  --accent: #2bb673; /* green accent */
+  --accent-dark: #eaf6ee; /* light text */
+  --muted: #9fb7a8; /* muted green */
+  --radius: 8px;
+  --shadow: 0 8px 24px rgba(0,0,0,0.6);
+  --max-width: 1100px;
+}
+
+/* Utility: center the site content */
+.site-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Keep layout stable between routes by reserving scrollbar space */
+html {
+  font-size: 16px;
+  min-height: 100%;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+body, #root {
+  min-height: 100vh;
+}
+
+/* Links */
+a { color: inherit; }
+
+/* Images: responsive with subtle rounding and shadow */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
 }
 
 code {

@@ -36,3 +36,128 @@
     transform: rotate(360deg);
   }
 }
+
+/* Layout: CSS Grid for page structure, Flexbox for navigation */
+.site-container {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  min-height: 100vh;
+}
+
+.site-header {
+  grid-area: header;
+  background: var(--surface);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.brand {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--brand);
+}
+
+.site-nav {
+  grid-area: nav;
+  background: transparent;
+  padding: 0.5rem 1rem;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: var(--accent-dark);
+  padding: 0.35rem 0.5rem;
+}
+
+.site-main {
+  grid-area: main;
+  padding: 1.5rem;
+  background: transparent;
+}
+
+.site-footer {
+  grid-area: footer;
+  padding: 1rem;
+  text-align: center;
+  background: var(--surface);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent-dark);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+
+p {
+  color: var(--muted);
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+span { color: inherit; }
+
+/* Navigation specifics */
+.site-nav { box-shadow: 0 1px 0 rgba(0,0,0,0.02); }
+.nav-list li a {
+  transition: color 150ms ease, background 150ms ease;
+  border-radius: 4px;
+}
+.nav-list li a:hover,
+.nav-list li a:focus {
+  color: var(--accent);
+  background: rgba(255,255,255,0.02);
+  outline: none;
+}
+
+/* Cards and surface elements */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #07220f;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.call-to-action { text-align: center; }
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .nav-list { justify-content: flex-start; }
+  .site-header { padding: 1.25rem 2rem; }
+  .site-main { padding: 2rem; }
+}
